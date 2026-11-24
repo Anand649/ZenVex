@@ -24,7 +24,13 @@ URL_MAX_POINTS = 50
 ML_MAX_POINTS = 20
 
 MODEL_PATH = Path(os.getenv("ZENVEX_MODEL_PATH", BASE_DIR / "models" / "baseline.joblib"))
-CORS_ORIGINS = [o.strip() for o in os.getenv("ZENVEX_CORS_ORIGINS", "*").split(",") if o.strip()]
+CORS_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "ZENVEX_CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
+    ).split(",")
+    if origin.strip()
+]
 
 HELPLINES = {
     "cybercrime_helpline": "1930",

@@ -127,3 +127,36 @@ def test_indicator_matching_ignores_url_text_and_sentence_boundaries():
     for s in r["spans"]:
         if s["kind"] == "indicator":
             assert s["end"] <= url_span["start"] or s["start"] >= url_span["end"], s
+
+
+def test_upi_refund_collect_request_scores_caution():
+    text = "Approve the collect request of Rs 1 on your UPI app to receive your refund of Rs 4,999."
+    result = analyze_text(text, use_ml=False)
+    assert result["risk"]["band"] == "caution"
+    assert result["scam_type"]["id"] == "payment_request"
+    span = next(s for s in result["spans"] if s["id"] == "upi_refund_collect")
+    assert text[span["start"]:span["end"]].endswith("to receive your refund")
+
+
+def test_upi_payment_and_refund_controls_stay_low():
+    for text in (
+        "Please approve the UPI collect request for your monthly subscription.",
+        "Your UPI refund was credited today.",
+        "Never approve a UPI collect request to receive a refund.",
+        "Approve the collect request in your UPI app. Your refund has been sent.",
+    ):
+        result = analyze_text(text, use_ml=False)
+        assert result["risk"]["band"] == "low"
+        assert "upi_refund_collect" not in ids(text)
+
+
+def test_scan_results_isolate_helplines():
+    from app.config import HELPLINES
+
+    expected = HELPLINES.copy()
+    for result in (analyze_text("Synthetic example", use_ml=False),
+                   analyze_url_only("example.invalid")):
+        result["helplines"]["note"] = "synthetic mutation"
+        assert HELPLINES == expected
+        assert analyze_text("Synthetic example", use_ml=False)["helplines"] == expected
+        assert analyze_url_only("example.invalid")["helplines"] == expected

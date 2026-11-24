@@ -7,8 +7,10 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 from fastapi import FastAPI
+from fastapi.exception_handlers import request_validation_exception_handler
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import CORS_ORIGINS, HELPLINES
@@ -30,11 +32,23 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.exception_handler(RequestValidationError)
+async def redact_scan_validation_errors(request, exc):
+    if request.url.path not in {"/api/v1/scan/text", "/api/v1/scan/url"}:
+        return await request_validation_exception_handler(request, exc)
+    # FastAPI includes rejected input and validation context by default.
+    detail = [
+        {key: error[key] for key in ("type", "loc", "msg")}
+        for error in exc.errors()
+    ]
+    return JSONResponse(status_code=422, content={"detail": detail})
+
 
 # Enriched Playbook metadata for the Scam Intelligence Library
 PLAYBOOK_DETAILS: Dict[str, Dict[str, Any]] = {
@@ -244,7 +258,7 @@ INTELLIGENCE_STATS = {
     "threats_detected": 16420,
     "high_risk_detections": 6830,
     "safe_analyses": 8470,
-    "accuracy_benchmark": "99.2%",
+    "accuracy_benchmark": "Not measured",
     "supported_languages": ["English", "Telugu", "Hindi", "Romanised Telugu", "Romanised Hindi", "Code-Mixed"],
     "scam_category_distribution": [
         {"name": "KYC & Account Block", "count": 6240, "percentage": 38, "risk": "High"},

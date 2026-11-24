@@ -86,6 +86,17 @@ INDICATORS = (
         ),
     ),
     IndicatorDef(
+        "upi_refund_collect",
+        "Asks you to approve a UPI collect request to receive a refund",
+        15,
+        (
+            r"(?:^|(?<=[.!?।\n]))[^\S\r\n]*(?:please[^\S\r\n]+)?"
+            r"(?:approve|accept) (?:the |this |a )?(?:upi collect request|"
+            r"collect request\b[^.!?।;\r\n]{0,60}\bupi)\b"
+            r"[^.!?।;\r\n]{0,30}\bto receive (?:your |a |the )?refund\b",
+        ),
+    ),
+    IndicatorDef(
         "reward_bait",
         "Promises a prize, lottery win, cashback or reward",
         12,

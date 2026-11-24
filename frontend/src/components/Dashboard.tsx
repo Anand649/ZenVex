@@ -75,11 +75,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onScanMessage, onScanUrl }
               Command Centre Intelligence
             </h1>
             <span className="px-2 py-0.5 text-xs font-mono bg-violet-500/20 text-violet-300 border border-violet-500/30 rounded">
-              LIVE TELEMETRY
+              DEMO DATA
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Real-time aggregate detection signals, category trends, and threat stream telemetry.
+            Illustrative scan counts, category trends, and sample events.
           </p>
         </div>
 
@@ -118,14 +118,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onScanMessage, onScanUrl }
         {/* Threats Detected */}
         <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Confirmed Threats</span>
+            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Flagged Scans</span>
             <ShieldAlert className="w-4 h-4 text-rose-400" />
           </div>
           <div className="text-3xl font-extrabold text-rose-400 font-mono">
             {stats ? stats.threats_detected.toLocaleString() : '16,420'}
           </div>
           <div className="text-[11px] text-slate-400">
-            {stats ? `${((stats.threats_detected / stats.total_analyses) * 100).toFixed(1)}% detection rate` : '65.9% detection rate'}
+            {stats ? `${((stats.threats_detected / stats.total_analyses) * 100).toFixed(1)}% flagged in this sample` : '65.9% flagged in this sample'}
           </div>
         </div>
 
@@ -139,21 +139,21 @@ export const Dashboard: React.FC<DashboardProps> = ({ onScanMessage, onScanUrl }
             {stats ? stats.high_risk_detections.toLocaleString() : '6,830'}
           </div>
           <div className="text-[11px] text-slate-400">
-            High damage financial threats
+            Illustrative high-risk count
           </div>
         </div>
 
         {/* Safe Analyses */}
         <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Safe & Benign Traffic</span>
+            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Low Detected Risk</span>
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-3xl font-extrabold text-emerald-400 font-mono">
             {stats ? stats.safe_analyses.toLocaleString() : '8,470'}
           </div>
           <div className="text-[11px] text-slate-400">
-            Validated authentic OTPs & alerts
+            Based on detected warning signs
           </div>
         </div>
       </div>
@@ -277,7 +277,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onScanMessage, onScanUrl }
         <div className="p-5 border-b border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div>
             <h3 className="text-sm font-bold text-white">Recent Investigation Activity</h3>
-            <p className="text-xs text-slate-400">Anonymised real-time forensic signatures processed across nodes</p>
+            <p className="text-xs text-slate-400">Illustrative examples of flagged activity</p>
           </div>
 
           <div className="relative w-full sm:w-64">

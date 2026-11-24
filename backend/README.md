@@ -81,7 +81,7 @@ Executes compiled regexes against unmasked text while preserving original offset
 
 ### `app/engine/urls.py`
 Executes **14 structural offline checks**. **HARD RULE:** Never perform DNS queries or HTTP fetches.
-- Checks: `ip_host`, `at_symbol`, `punycode`, `shortener`, `brand_mismatch`, `subdomain_brand`, `suspicious_tld`, `phishing_words`, `explicit_http`, `credential_target`, `double_slash_redirect`, `hex_encoding`, `too_many_subdomains`, `hyphenated_brand`.
+- Checks: ip_host, at_symbol, punycode, shortener, suspicious_tld, many_subdomains, many_hyphens, long_url, explicit_http, phishing_words, brand_mismatch, lookalike_brand, apk_link, digit_heavy.
 - `BRANDS`: Allowlist mapping legitimate brand registered domains (SBI, HDFC, ICICI, India Post, Amazon, Flipkart, etc.).
 
 ### `app/engine/playbooks.py`

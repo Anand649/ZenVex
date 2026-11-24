@@ -124,7 +124,7 @@ export const api = {
       threats_detected: 16420,
       high_risk_detections: 6830,
       safe_analyses: 8470,
-      accuracy_benchmark: '99.2%',
+      accuracy_benchmark: 'Not measured',
       supported_languages: ['English', 'Telugu', 'Hindi', 'Romanised', 'Code-Mixed'],
       scam_category_distribution: [
         { name: 'KYC & Account Block', count: 6240, percentage: 38, risk: 'High' },

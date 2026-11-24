@@ -8,7 +8,7 @@ Help an ordinary user decide whether a message or link is a scam *before acting 
 
 **In scope (Level 1, built):** text scanning, language detection, rule-based indicators, offline URL analysis, risk scoring, scam-type playbooks, deterministic explanation, REST API, web UI, tests, evaluation script.
 
-**Out of scope until Level 2:** screenshot OCR, trained ML model in the live path, React UI, history/feedback storage, LLM-phrased explanations, URL reputation lookups, SMS/WhatsApp integration, browser extension.
+**Out of scope until Level 2:** screenshot OCR, trained ML model in the live path, history/feedback storage, LLM-phrased explanations, URL reputation lookups, SMS/WhatsApp integration, browser extension.
 
 ## 2. Users and key scenarios
 
@@ -37,7 +37,7 @@ The default path makes **no calls to third parties** and **stores nothing**.
 ```mermaid
 flowchart TB
     subgraph Client
-        UI[Static web UI - highlighted evidence, EN/TE toggle]
+        UI[React web UI with static fallback]
     end
     subgraph Server[FastAPI service]
         R[Routes + validation - schemas.py]

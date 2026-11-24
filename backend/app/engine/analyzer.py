@@ -60,7 +60,7 @@ def analyze_text(text: str, use_ml: bool = True) -> dict:
         "spans": spans,
         "explanation": {"text": build_explanation(risk, indicators, url_reports, playbook_id), "source": "template"},
         "actions": _actions(playbook_id),
-        "helplines": HELPLINES,
+        "helplines": HELPLINES.copy(),
         "ml_used": ml_prob is not None,
     }
 
@@ -84,6 +84,6 @@ def analyze_url_only(raw_url: str) -> dict:
         "spans": [],
         "explanation": {"text": build_explanation(risk, [], [rep], None), "source": "template"},
         "actions": _actions(None),
-        "helplines": HELPLINES,
+        "helplines": HELPLINES.copy(),
         "ml_used": False,
     }

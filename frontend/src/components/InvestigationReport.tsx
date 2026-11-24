@@ -83,6 +83,8 @@ Disclaimer: ${risk.disclaimer}`;
       return <span>{text}</span>;
     }
 
+    // The API counts Unicode code points, while JavaScript strings index UTF-16 units.
+    const characters = Array.from(text);
     // Sort spans by start offset
     const sorted = [...report.spans].sort((a, b) => a.start - b.start);
     const elements: React.ReactNode[] = [];
@@ -95,12 +97,12 @@ Disclaimer: ${risk.disclaimer}`;
       if (span.start > currentIndex) {
         elements.push(
           <span key={`text-${currentIndex}`}>
-            {text.substring(currentIndex, span.start)}
+            {characters.slice(currentIndex, span.start).join('')}
           </span>
         );
       }
 
-      const matchText = text.substring(span.start, span.end);
+      const matchText = characters.slice(span.start, span.end).join('');
       const isUrl = span.kind === 'url';
 
       elements.push(
@@ -119,10 +121,10 @@ Disclaimer: ${risk.disclaimer}`;
       currentIndex = span.end;
     });
 
-    if (currentIndex < text.length) {
+    if (currentIndex < characters.length) {
       elements.push(
         <span key={`text-end`}>
-          {text.substring(currentIndex)}
+          {characters.slice(currentIndex).join('')}
         </span>
       );
     }

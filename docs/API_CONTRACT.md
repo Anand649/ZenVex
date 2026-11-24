@@ -74,12 +74,24 @@ Request `{ "url": "bit.ly/abc" }` (3 to 2048 characters). Response has the same 
 
 Returns `[{ "id", "title", "text" }]`. All examples are synthetic or illustrative.
 
+## Additional implemented routes
+
+All three GET routes currently return HTTP 200.
+
+- /api/v1/playbooks returns nine playbook objects with id, label, description, warning_signs, attacker_techniques, example_message, and prevention_tips.
+- /api/v1/playbooks/{playbook_id} returns one playbook. Unknown IDs return {"error": "Playbook not found"} with HTTP 200.
+- /api/v1/stats returns static demonstration figures. Its fields are total_analyses, threats_detected, high_risk_detections, safe_analyses, accuracy_benchmark, supported_languages, scam_category_distribution, timeline_activity, and recent_threats. These are illustrative figures, not measured traffic or validated accuracy.
+
 ## Errors
 
 | Code | Meaning |
 |---|---|
 | 422 | Validation failed (blank, too long, missing field) |
 | 500 | Unexpected server error; the message text is never included in error bodies or logs |
+
+Scan validation failures return HTTP 422 with a `detail` array. Each entry
+contains `type`, `loc`, and `msg`. The server omits rejected input and validation
+context to avoid echoing submitted content.
 
 ## Versioning
 
