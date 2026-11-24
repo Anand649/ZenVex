@@ -1,6 +1,6 @@
 {
   "test_id": "ML-001",
-  "model_path": "D:\\zenvex\\ZenVex\\backend\\models\\baseline.joblib",
+  "model_file": "baseline.joblib",
   "exists": false,
   "status": "PASS",
   "interpretation": "Level 1 baseline expects no bundled model artifact; rules engine operates standalone."

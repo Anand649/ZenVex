@@ -1,8 +1,11 @@
 # Project Architecture Report
-**QA Session:** SESSION-001  
-**Date:** 2026-11-24  
-**Project:** ZenVex Guard — AI-Powered Multilingual Scam & Digital Threat Intelligence Platform  
-**QA Engineer:** Autonomous QA Agent (Antigravity)  
+
+> Historical RUN-001 snapshot. The v1 playbook contract disposition was corrected after this run. See [QA review notes](README.md) for the current disposition. Original aggregate results are retained as recorded.
+
+**QA Session:** SESSION-001\
+**Date:** 2026-11-24\
+**Project:** ZenVex Guard — AI-Powered Multilingual Scam & Digital Threat Intelligence Platform\
+**QA Engineer:** Autonomous QA Agent (Antigravity)\
 
 ---
 

@@ -1,8 +1,11 @@
 # API & Integration Validation Report
-**Project:** ZenVex Guard API (v1)  
-**Evaluation Date:** 2026-11-24  
-**Author:** Autonomous QA & Test Automation Specialist  
-**Framework:** FastAPI 0.165.0 / Pydantic 2.14.4  
+
+> Historical RUN-001 snapshot. The v1 playbook contract disposition was corrected after this run. See [QA review notes](README.md) for the current disposition. Original aggregate results are retained as recorded.
+
+**Project:** ZenVex Guard API (v1)\
+**Evaluation Date:** 2026-11-24\
+**Author:** Autonomous QA & Test Automation Specialist\
+**Framework:** FastAPI 0.165.0 / Pydantic 2.14.4\
 
 ---
 
@@ -73,13 +76,13 @@ Socket calls were monkeypatched to intercept any network connection attempt duri
 ## 6. End-to-End User Workflows
 
 ### Workflow 1: Text Scam Analysis Flow
-`User Submits Deceptive SMS` → `FastAPI Validates Schema` → `Rule Engine Identifies Indicators` → `Offline URL Analyzer Flags Lookalike Domain` → `Playbook Engine Associates KYC Scam` → `Unified JSON Dossier Returned with Character Spans & Emergency Helplines`  
+`User Submits Deceptive SMS` → `FastAPI Validates Schema` → `Rule Engine Identifies Indicators` → `Offline URL Analyzer Flags Lookalike Domain` → `Playbook Engine Associates KYC Scam` → `Unified JSON Dossier Returned with Character Spans & Emergency Helplines`\
 - **Status:** **PASS** (Latency: 0.14 ms)
 
 ### Workflow 2: Dedicated URL Sandbox Flow
-`User Submits Shortened Link` → `FastAPI Validates URL` → `URL Parser Identifies Shortener Service` → `Air-gapped Verdict Generated`  
+`User Submits Shortened Link` → `FastAPI Validates URL` → `URL Parser Identifies Shortener Service` → `Air-gapped Verdict Generated`\
 - **Status:** **PASS** (Latency: 0.08 ms)
 
 ### Workflow 3: Frontend Asset Delivery Flow
-`Browser requests GET /` → `FastAPI checks FRONTEND_DIST.exists()` → `Serves compiled Vite index.html` → `Loads compiled CSS and JS chunks from /assets`  
+`Browser requests GET /` → `FastAPI checks FRONTEND_DIST.exists()` → `Serves compiled Vite index.html` → `Loads compiled CSS and JS chunks from /assets`\
 - **Status:** **PASS**

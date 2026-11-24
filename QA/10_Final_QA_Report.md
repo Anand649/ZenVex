@@ -1,8 +1,11 @@
 # Comprehensive Final Software QA & AI/ML Validation Report
-**Platform:** ZenVex Guard — AI-Powered Multilingual Scam & Digital Threat Intelligence Platform  
-**Evaluation Date:** 2026-11-24  
-**Evaluator:** Senior Autonomous QA & AI/ML Validation Specialist  
-**Release Readiness Classification:** **READY WITH LIMITATIONS**  
+
+> Historical RUN-001 snapshot. The v1 playbook contract disposition was corrected after this run. See [QA review notes](README.md) for the current disposition. Original aggregate results are retained as recorded.
+
+**Platform:** ZenVex Guard — AI-Powered Multilingual Scam & Digital Threat Intelligence Platform\
+**Evaluation Date:** 2026-11-24\
+**Evaluator:** Senior Autonomous QA & AI/ML Validation Specialist\
+**Release Readiness Classification:** **READY WITH LIMITATIONS**\
 
 ---
 

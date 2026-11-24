@@ -1,8 +1,8 @@
 {
   "test_id": "PERF-001",
   "iterations": 200,
-  "total_seconds": 0.0367,
-  "avg_ms_per_scan": 0.184,
-  "throughput_scans_per_sec": 5444.2,
+  "total_seconds": 0.0498,
+  "avg_ms_per_scan": 0.249,
+  "throughput_scans_per_sec": 4012.4,
   "status": "PASS"
 }

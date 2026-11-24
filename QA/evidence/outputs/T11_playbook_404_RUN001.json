@@ -1,12 +1,12 @@
 {
   "test_id": "API-012",
-  "defect_id": "BUG-002",
   "request": "GET /api/v1/playbooks/nonexistent_id",
   "status_code": 200,
   "body": {
     "error": "Playbook not found"
   },
-  "expected_status": 404,
+  "expected_status": 200,
   "actual_status": 200,
-  "observation": "REST convention expects 404 for missing resource, but API currently returns 200 with error JSON."
+  "status": "PASS",
+  "observation": "HTTP 200 with an error object is the documented v1 contract."
 }

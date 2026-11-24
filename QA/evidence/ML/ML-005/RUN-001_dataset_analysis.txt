@@ -1,5 +1,5 @@
 eval_set row count: 42
 scam count: 22
 legit count: 20
-languages: {"te": 5, "en": 27, "te-rom": 4, "hi-rom": 3, "hi": 3}
+languages: {"en": 27, "hi-rom": 3, "te": 5, "hi": 3, "te-rom": 4}
 sources: ["synthetic-starter"]

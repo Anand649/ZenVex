@@ -1,4 +1,7 @@
 # Final QA Report
+
+> Historical RUN-001 snapshot. The v1 playbook contract disposition was corrected after this run. See [QA review notes](README.md) for the current disposition. Original aggregate results are retained as recorded.
+
 *(Consolidated master copy of QA/10_Final_QA_Report.md)*
 
 Please refer to the comprehensive report at [10_Final_QA_Report.md](file:///d:/zenvex/ZenVex/QA/10_Final_QA_Report.md).

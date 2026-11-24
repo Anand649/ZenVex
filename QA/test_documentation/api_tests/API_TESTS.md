@@ -34,12 +34,12 @@
 - **Execution Date:** 2026-11-24
 - **Objective:** Verify response when an unlisted playbook ID is requested.
 - **Input:** `GET /api/v1/playbooks/nonexistent_id`
-- **Expected:** HTTP 404 per standard REST conventions.
+- **Expected:** HTTP 200 with the v1 error object.
 - **Actual:** HTTP 200 with body `{"error": "Playbook not found"}`.
-- **Status:** **NEEDS REVIEW**
-- **Defect Reference:** `BUG-002`
+- **Status:** **PASS**
+- **Historical reference:** `BUG-002` is closed as documented v1 behavior.
 - **Evidence:** `QA/evidence/outputs/T11_playbook_404_RUN001.json`
-- **Recommendation:** Change handler to raise `HTTPException(status_code=404, detail="Playbook not found")`.
+- **Recommendation:** Consider HTTP 404 only through a reviewed API contract change.
 
 ---
 

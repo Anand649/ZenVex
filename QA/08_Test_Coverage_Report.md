@@ -1,7 +1,10 @@
 # Test Coverage & Quality Dashboard Report
-**Project:** ZenVex Guard  
-**Date:** 2026-11-24  
-**Author:** Autonomous QA & Test Automation Specialist  
+
+> Historical RUN-001 snapshot. The v1 playbook contract disposition was corrected after this run. See [QA review notes](README.md) for the current disposition. Original aggregate results are retained as recorded.
+
+**Project:** ZenVex Guard\
+**Date:** 2026-11-24\
+**Author:** Autonomous QA & Test Automation Specialist\
 
 ---
 

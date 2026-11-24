@@ -1,11 +1,12 @@
 """Dataset quality analysis script for QA validation."""
 import csv
 import json
-import sys
-sys.path.insert(0, '.')
+from pathlib import Path
+
+DATA_DIR = Path(__file__).resolve().parents[3] / "backend" / "data"
 
 # Check eval_set.csv
-with open('data/eval_set.csv', newline='', encoding='utf-8') as f:
+with open(DATA_DIR / "eval_set.csv", newline='', encoding='utf-8') as f:
     rows = list(csv.DictReader(f))
 
 print(f'Total rows: {len(rows)}')
@@ -28,9 +29,9 @@ dup_ids = [i for i in ids if ids.count(i) > 1]
 print('Duplicate IDs:', dup_ids if dup_ids else 'None - all unique')
 
 # Check dev_set and heldout_set
-with open('data/dev_set.csv', newline='', encoding='utf-8') as f:
+with open(DATA_DIR / "dev_set.csv", newline='', encoding='utf-8') as f:
     dev = list(csv.DictReader(f))
-with open('data/heldout_set.csv', newline='', encoding='utf-8') as f:
+with open(DATA_DIR / "heldout_set.csv", newline='', encoding='utf-8') as f:
     heldout = list(csv.DictReader(f))
 print(f'dev_set rows: {len(dev)}, heldout_set rows: {len(heldout)}')
 

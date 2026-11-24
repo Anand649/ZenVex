@@ -29,4 +29,3 @@ Per category (TP FP TN FN | recall, FP rate)
   work      0   0   1   0 | recall n/a, FP rate 0.00
 
 Interpret results according to the dataset's provenance and independence.
-
