@@ -1,0 +1,49 @@
+Requirement ID,Category,Module,Requirement Description,Verification Method,Source Specification,Mapped Test IDs,Coverage Status
+REQ-API-01,Software Functionality,app/main.py,System liveness and platform metadata via /health endpoint,API Test,API_CONTRACT.md; README.md,FUNC-001; API-001,Covered
+REQ-API-02,Software Functionality,app/main.py,Text analysis endpoint /api/v1/scan/text accepts valid payloads and returns threat assessment,API Test,API_CONTRACT.md; LLD.md,FUNC-002; API-002,Covered
+REQ-API-03,Input Validation,app/schemas.py,Text scan request validates non-blank input and enforces 5000 char maximum,Unit / API Test,API_CONTRACT.md; schemas.py,FUNC-004; FUNC-005,Covered
+REQ-API-04,Input Validation,app/schemas.py,Text scan request accepts valid boundary lengths up to 5000 chars,Boundary Test,API_CONTRACT.md; config.py,FUNC-006,Covered
+REQ-API-05,Input Validation,app/schemas.py,URL scan request enforces minimum 3 chars and maximum 2048 chars,Boundary Test,API_CONTRACT.md; schemas.py,FUNC-007; FUNC-008; FUNC-009,Covered
+REQ-API-06,Software Functionality,app/main.py,Scam playbook inventory endpoint provides 9 comprehensive Indian threat categories,API Test,API_CONTRACT.md; playbooks.py,FUNC-011; FUNC-012; API-006; API-007,Covered
+REQ-API-07,Software Functionality,app/main.py,Threat intelligence statistics endpoint provides distribution and telemetry metrics,API Test,API_CONTRACT.md; main.py,FUNC-013; API-008,Covered
+REQ-PRIV-01,Security / Privacy,app/main.py,Stateless privacy by design: validation errors do not echo submitted content in responses,Security Test,AGENTS.md; API_CONTRACT.md,FUNC-014; SEC-001,Covered
+REQ-PRIV-02,Security / Privacy,app/main.py,Stateless privacy by design: scan IDs are not retrievable; no message persistence,Security Test,AGENTS.md; API_CONTRACT.md,FUNC-015,Covered
+REQ-PRIV-03,Security / Privacy,engine/urls.py,Air-gapped offline URL analysis: link evaluation must never make network calls or DNS queries,Security / Unit Test,HLD.md; urls.py,FUNC-032; SEC-002,Covered
+REQ-PRIV-04,Security / Privacy,engine/analyzer.py,Emergency helpline metadata is isolated and immune to caller mutation,Integration Test,config.py; analyzer.py,FUNC-038; INT-002,Covered
+REQ-LANG-01,AI/ML / Language,engine/language.py,Language detection correctly identifies English messages,Unit Test,LLD.md; language.py,FUNC-017,Covered
+REQ-LANG-02,AI/ML / Language,engine/language.py,Language detection correctly identifies Telugu native script messages,Unit Test,LLD.md; language.py,FUNC-018,Covered
+REQ-LANG-03,AI/ML / Language,engine/language.py,Language detection correctly identifies Hindi native script messages,Unit Test,LLD.md; language.py,FUNC-019,Covered
+REQ-LANG-04,AI/ML / Language,engine/language.py,Language detection correctly identifies Romanised Telugu messages,Unit Test,LLD.md; language.py,FUNC-020,Covered
+REQ-LANG-05,AI/ML / Language,engine/language.py,Language detection correctly identifies Romanised Hindi messages,Unit Test,LLD.md; language.py,FUNC-021,Covered
+REQ-ENGINE-01,Software Functionality,engine/rules.py,Scam playbooks accurately correlate indicators and categorize threat vectors,Integration Test,playbooks.py; rules.py,FUNC-003,Covered (Defect Found)
+REQ-ENGINE-02,Software Functionality,engine/rules.py,KYC and account suspension threats correctly detected in multilingual scripts,Unit Test,lexicon.py; rules.py,FUNC-022,Covered
+REQ-ENGINE-03,Software Functionality,engine/rules.py,Credential extraction requests (OTP PIN card) detected across scripts,Unit Test,lexicon.py; rules.py,FUNC-023,Covered
+REQ-ENGINE-04,Software Functionality,engine/rules.py,Security warnings advising users not to share OTPs are guarded from false positive flagging,Unit Test,rules.py,FUNC-024,Covered
+REQ-ENGINE-05,Software Functionality,engine/rules.py,Legitimate bank notifications and utility alerts receive low risk band,Unit Test,rules.py; risk.py,FUNC-025,Covered
+REQ-ENGINE-06,Software Functionality,engine/rules.py,Urgency expressions alone do not elevate message to high risk band,Unit Test,risk.py,FUNC-026,Covered
+REQ-ENGINE-07,Integration,engine/analyzer.py,Full analysis pipeline produces unified threat dossier with scores spans and actions,Integration Test,analyzer.py; schemas.py,FUNC-033; INT-001,Covered
+REQ-ENGINE-08,Integration,engine/analyzer.py,URL-only analysis pipeline returns dedicated URL assessment without requiring text indicators,Integration Test,analyzer.py,FUNC-034,Covered
+REQ-ENGINE-09,Regression,engine/rules.py,Indicator matching ignores embedded URL text and respects sentence boundaries,Regression Test,rules.py,FUNC-035,Covered
+REQ-ENGINE-10,Software Functionality,engine/rules.py,UPI refund collect request scams correctly classified as payment request fraud,Unit Test,lexicon.py; rules.py,FUNC-036,Covered
+REQ-ENGINE-11,Software Functionality,engine/rules.py,Benign UPI payment alerts and genuine refund notices score low risk,Unit Test,rules.py; risk.py,FUNC-037,Covered
+REQ-URL-01,Software Functionality,engine/urls.py,Malformed URLs return structured offline report with malformed verdict flag,Unit Test,urls.py,FUNC-010,Covered
+REQ-URL-02,Software Functionality,engine/urls.py,URL extraction trims trailing punctuation and correctly ignores email addresses,Unit Test,urls.py,FUNC-027,Covered
+REQ-URL-03,Software Functionality,engine/urls.py,Registered domain resolution accurately identifies multi-part suffixes (.co.in .gov.in),Unit Test,urls.py,FUNC-028,Covered
+REQ-URL-04,Software Functionality,engine/urls.py,Official institutional domains match allowlist and produce zero malicious flags,Unit Test,urls.py,FUNC-029,Covered
+REQ-URL-05,Software Functionality,engine/urls.py,Brand impersonation across unlisted domains flags brand_mismatch,Unit Test,urls.py,FUNC-030,Covered
+REQ-URL-06,Software Functionality,engine/urls.py,Raw IP hosts and URL shorteners flagged; safe verdict is never returned,Unit Test,urls.py,FUNC-031,Covered
+REQ-ML-01,AI/ML Validation,app/ml/predictor.py,Predictor operates gracefully when ML model artifact is absent,Unit Test,predictor.py,ML-001; ML-002,Covered
+REQ-ML-02,AI/ML Validation,app/ml/predictor.py,predict_proba returns None rather than raising exceptions when model is uninitialized,Unit Test,predictor.py,ML-002,Covered
+REQ-ML-03,AI/ML Validation,engine/analyzer.py,Full analysis pipeline succeeds with use_ml=True even when model is absent,Integration Test,analyzer.py,ML-003,Covered
+REQ-ML-04,AI/ML Validation,scripts/evaluate.py,Evaluation script executes correctly and calculates precision recall and F1 metrics,Evaluation / ML,evaluate.py,ML-004,Covered
+REQ-ML-05,AI/ML Validation,data/eval_set.csv,Evaluation dataset has balanced classes valid labels and clean schema,Data Validation,DATASET_CARD.md,ML-005,Covered
+REQ-ML-06,AI/ML Validation,data/dev_set.csv,Development and held-out datasets exist for independent generalization validation,Data Validation,TEST_AND_EVALUATION_PLAN.md,ML-006,Covered (Gap Found)
+REQ-DATA-01,Data Validation,data/eval_set.csv,Train/test dataset separation prevents data leakage between splits,Data Validation,TEST_AND_EVALUATION_PLAN.md,DATA-001,Covered
+REQ-INT-01,Integration,engine/analyzer.py,Scan response complies strictly with Pydantic ScanResponse schema specification,Integration Test,schemas.py,INT-001,Covered
+REQ-INT-02,Integration,engine/analyzer.py,Helpline dictionary integrity protected against mutation across scans,Integration Test,config.py,INT-002,Covered
+REQ-INT-03,Integration,engine/analyzer.py,Character span offsets accurately map to substrings within source message,Integration Test,analyzer.py,INT-003,Covered
+REQ-PERF-01,System Reliability,engine/analyzer.py,Heuristic evaluation throughput achieves < 50ms latency per message,Performance Test,HLD.md,PERF-001,Covered
+REQ-SEC-01,Security / Privacy,app/main.py,Input payload secrets redacted from HTTP error responses and application logs,Security Test,AGENTS.md,SEC-001,Covered
+REQ-SEC-02,Security / Privacy,engine/urls.py,Strict socket-level isolation prevents outbound network socket generation during URL scans,Security Test,HLD.md,SEC-002,Covered
+REQ-UI-01,Frontend,frontend/src,React frontend compiles cleanly and static production bundle is served by backend,Frontend / E2E,package.json; main.py,UI-001,Covered
+REQ-REG-01,Regression,Full System,All baseline test cases remain passing following testing and reconnaissance activities,Regression Test,pytest.ini,REG-001,Covered

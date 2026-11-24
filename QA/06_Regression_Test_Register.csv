@@ -1,0 +1,19 @@
+Regression ID,Related Test ID,Original Run ID,Original Status,Regression Run ID,Regression Status,Regression Date,Execution Command,Regression Verdict,Notes
+REG-001,FUNC-001,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_health,NO REGRESSION,Health endpoint maintains backward compatibility
+REG-002,FUNC-002,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_scan_text_ok,NO REGRESSION,Text scan contract remains verified
+REG-003,FUNC-004,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_scan_text_validation,NO REGRESSION,Validation controls intact
+REG-004,FUNC-010,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_malformed_url_returns_an_offline_report,NO REGRESSION,Malformed URL handler preserved
+REG-005,FUNC-011,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_playbooks_contract,NO REGRESSION,Playbook schema contract preserved
+REG-006,FUNC-013,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_stats_contract,NO REGRESSION,Telemetry schema contract preserved
+REG-007,FUNC-014,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_scan_validation_does_not_echo_submitted_content,NO REGRESSION,Privacy guardrail intact
+REG-008,FUNC-015,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_api.py::test_no_message_echo_in_error_logs_or_storage,NO REGRESSION,Stateless 404 behavior preserved
+REG-009,FUNC-017,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_language_detection,NO REGRESSION,Multilingual script classifier intact
+REG-010,FUNC-022,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_kyc_scam_indicators,NO REGRESSION,KYC indicators trigger accurately
+REG-011,FUNC-024,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_otp_warning_is_not_a_request,NO REGRESSION,False positive negation guard intact
+REG-012,FUNC-025,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_genuine_messages_score_low,NO REGRESSION,Legitimate message risk band remains low
+REG-013,FUNC-030,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_brand_in_wrong_domain_flagged,NO REGRESSION,Brand mismatch heuristics preserved
+REG-014,FUNC-032,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_url_analyser_does_not_touch_network,NO REGRESSION,Socket air-gap restriction fully verified
+REG-015,FUNC-035,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_indicator_matching_ignores_url_text_and_sentence_boundaries,NO REGRESSION,URL isolation and boundary logic intact
+REG-016,FUNC-036,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_upi_refund_collect_request_scores_caution,NO REGRESSION,UPI collect regex active
+REG-017,FUNC-038,RUN-001,PASS,RUN-002,PASS,2026-11-24,python -m pytest tests/test_engine.py::test_scan_results_isolate_helplines,NO REGRESSION,Helplines copy isolation intact
+REG-018,UI-001,RUN-001,PASS,RUN-002,PASS,2026-11-24,cd frontend && npm run build,NO REGRESSION,Frontend builds cleanly and mounts to backend

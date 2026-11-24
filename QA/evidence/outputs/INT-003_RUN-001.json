@@ -1,0 +1,12 @@
+{
+  "test_id": "INT-003",
+  "url_spans_count": 1,
+  "indicator_spans_count": 3,
+  "extracted_spans": {
+    "url_url": "http://sbi-kyc-update.xyz",
+    "indicator_urgency": "immediately",
+    "indicator_account_threat": "account will be blocked",
+    "indicator_kyc_pressure": "incomplete KYC"
+  },
+  "status": "PASS"
+}

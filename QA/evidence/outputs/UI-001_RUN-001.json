@@ -1,0 +1,7 @@
+{
+  "test_id": "UI-001",
+  "route": "GET /",
+  "status_code": 200,
+  "serves_production_build": true,
+  "html_snippet": "<!doctype html>\r\n<html lang=\"en\" class=\"dark\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoi"
+}

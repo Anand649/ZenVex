@@ -1,0 +1,8 @@
+{
+  "test_id": "ML-003",
+  "use_ml_requested": true,
+  "ml_used_in_response": false,
+  "risk_band": "low",
+  "status": "PASS",
+  "fallback_graceful": true
+}

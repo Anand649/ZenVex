@@ -1,0 +1,32 @@
+Rows: 42  threshold: score >= 30  ML: off
+Confusion  TP=22 FP=0 TN=20 FN=0
+Precision=1.00 Recall=1.00 F1=1.00 False-positive rate=0.00
+
+Per language (TP FP TN FN | recall, FP rate)
+  en       12   0  15   0 | recall 1.00, FP rate 0.00
+  hi        2   0   1   0 | recall 1.00, FP rate 0.00
+  hi-rom    2   0   1   0 | recall 1.00, FP rate 0.00
+  te        3   0   2   0 | recall 1.00, FP rate 0.00
+  te-rom    3   0   1   0 | recall 1.00, FP rate 0.00
+
+Per category (TP FP TN FN | recall, FP rate)
+  account   1   0   0   0 | recall 1.00, FP rate n/a
+  bank_alert   0   0   4   0 | recall n/a, FP rate 0.00
+  bill      0   0   2   0 | recall n/a, FP rate 0.00
+  credential   4   0   0   0 | recall 1.00, FP rate n/a
+  delivery   1   0   3   0 | recall 1.00, FP rate 0.00
+  digital_arrest   1   0   0   0 | recall 1.00, FP rate n/a
+  investment   1   0   0   0 | recall 1.00, FP rate n/a
+  job       3   0   0   0 | recall 1.00, FP rate n/a
+  kyc       5   0   0   0 | recall 1.00, FP rate n/a
+  marketing   0   0   2   0 | recall n/a, FP rate 0.00
+  otp       0   0   4   0 | recall n/a, FP rate 0.00
+  payment   1   0   0   0 | recall 1.00, FP rate n/a
+  personal   0   0   2   0 | recall n/a, FP rate 0.00
+  prize     3   0   0   0 | recall 1.00, FP rate n/a
+  remote    2   0   0   0 | recall 1.00, FP rate n/a
+  travel    0   0   2   0 | recall n/a, FP rate 0.00
+  work      0   0   1   0 | recall n/a, FP rate 0.00
+
+Interpret results according to the dataset's provenance and independence.
+

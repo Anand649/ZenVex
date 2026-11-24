@@ -1,0 +1,62 @@
+Test ID,Run ID,Attempt,Result,Date,Environment,Evidence Path,Notes
+FUNC-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Health check returned 200 with ok status
+FUNC-002,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Text scan returns very_high risk band
+FUNC-003,RUN-001,1,FAIL,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/outputs/T3_investigation_RUN001.json,APK link classified as prize_lottery instead of remote_access (BUG-001)
+FUNC-004,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Blank text rejected with 422
+FUNC-005,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,5001 chars rejected with 422
+FUNC-006,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,5000 chars accepted with 200
+FUNC-007,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Short URL rejected with 422
+FUNC-008,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,2048 char URL accepted with 200
+FUNC-009,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,2049 char URL rejected with 422
+FUNC-010,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Malformed URL returns offline report
+FUNC-011,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,9 playbooks returned
+FUNC-012,RUN-001,1,FAIL,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/outputs/T11_playbook_404_RUN001.json,Unknown playbook ID returned 200 instead of 404 (BUG-002)
+FUNC-013,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Stats contract verified
+FUNC-014,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Payload not echoed in 422 response
+FUNC-015,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Scan ID endpoint returns 404 by design
+FUNC-016,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Examples list contains 6 items
+FUNC-017,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,English detected
+FUNC-018,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Telugu script detected
+FUNC-019,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Hindi script detected
+FUNC-020,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Romanised Telugu detected
+FUNC-021,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Romanised Hindi detected
+FUNC-022,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,KYC scam indicators detected
+FUNC-023,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Credential request detected
+FUNC-024,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,OTP warning not flagged as request
+FUNC-025,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,5 genuine messages scored low risk
+FUNC-026,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Urgency alone scores low risk
+FUNC-027,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,URL extraction trims punctuation skips emails
+FUNC-028,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Registered domain handles multi-part TLDs
+FUNC-029,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Official SBI domain not flagged
+FUNC-030,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Brand mismatch flagged
+FUNC-031,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Raw IP and shorteners flagged
+FUNC-032,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,URL analyzer makes zero network calls
+FUNC-033,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Full pipeline KYC test passed
+FUNC-034,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,URL-only pipeline passed
+FUNC-035,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Indicator spans clean of URLs and sentence boundaries
+FUNC-036,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,UPI collect request scores caution
+FUNC-037,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,UPI genuine controls score low
+FUNC-038,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Helplines dictionary isolated
+ML-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-001/RUN-001_model_check.json,Model file does not exist (expected Level 1 behavior)
+ML-002,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-002/RUN-001_predict_none.json,predict_proba returns None gracefully
+ML-003,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-003/RUN-001_fallback.json,Pipeline functions when use_ml=True without model
+ML-004,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-004/RUN-001_eval_output.txt,scripts/evaluate.py executed: TP=22 FP=0 TN=20 FN=0
+ML-005,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-005/RUN-001_dataset_analysis.txt,eval_set.csv validated (42 rows balanced)
+ML-006,RUN-001,1,FAIL,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-006/RUN-001_dataset_check.txt,dev_set.csv and heldout_set.csv are empty stubs
+DATA-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/ML/ML-005/RUN-001_dataset_analysis.txt,Zero data contamination detected
+INT-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/outputs/INT-001_RUN-001.json,ScanResponse schema contains all 13 required fields
+INT-002,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Helplines copy isolation verified
+INT-003,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/outputs/INT-003_RUN-001.json,Span character offsets match original substrings
+PERF-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/outputs/PERF-001_RUN-001.json,200 scans: 0.14ms per scan (7142 scans/sec)
+SEC-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/outputs/SEC-001_RUN-001.json,Sensitive token redacted from 422 error body
+SEC-002,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Strict network socket isolation confirmed
+API-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Health route verified
+API-002,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,URL route verified
+API-003,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Missing body returns 422
+API-004,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Non-string type returns 422
+API-005,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,Truncated JSON returns 422
+API-006,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,All 9 playbook detail endpoints match
+API-007,RUN-001,1,NEEDS REVIEW,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/outputs/T11_playbook_404_RUN001.json,Unknown ID returns 200 with error dict
+API-008,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / FastAPI 0.165,QA/evidence/outputs/T10_stats_RUN-001.json,Threat category percentage distribution equals 100%
+UI-001,RUN-001,1,PASS,2026-11-24,Node.js v24.19 / Vite 5.4 / React 18,QA/evidence/outputs/UI-001_RUN-001.json,Frontend compiled via tsc + vite; served by FastAPI /
+REG-001,RUN-001,1,PASS,2026-11-24,Windows 11 / Python 3.14.7 / pytest 9.2,QA/evidence/logs/pytest_run_RUN001_2026-11-24.txt,All 36 original unit/integration tests passing

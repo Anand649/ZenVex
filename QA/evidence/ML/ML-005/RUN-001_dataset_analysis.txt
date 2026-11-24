@@ -1,0 +1,5 @@
+eval_set row count: 42
+scam count: 22
+legit count: 20
+languages: {"te": 5, "en": 27, "te-rom": 4, "hi-rom": 3, "hi": 3}
+sources: ["synthetic-starter"]

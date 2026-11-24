@@ -1,0 +1,135 @@
+{
+  "test_id": "API-008",
+  "status_code": 200,
+  "stats": {
+    "total_analyses": 24890,
+    "threats_detected": 16420,
+    "high_risk_detections": 6830,
+    "safe_analyses": 8470,
+    "accuracy_benchmark": "Not measured",
+    "supported_languages": [
+      "English",
+      "Telugu",
+      "Hindi",
+      "Romanised Telugu",
+      "Romanised Hindi",
+      "Code-Mixed"
+    ],
+    "scam_category_distribution": [
+      {
+        "name": "KYC & Account Block",
+        "count": 6240,
+        "percentage": 38,
+        "risk": "High"
+      },
+      {
+        "name": "UPI & Payment Fraud",
+        "count": 4120,
+        "percentage": 25,
+        "risk": "High"
+      },
+      {
+        "name": "Job & Task Earning",
+        "count": 2790,
+        "percentage": 17,
+        "risk": "Medium"
+      },
+      {
+        "name": "Digital Arrest",
+        "count": 1480,
+        "percentage": 9,
+        "risk": "Critical"
+      },
+      {
+        "name": "Delivery & Customs",
+        "count": 980,
+        "percentage": 6,
+        "risk": "Medium"
+      },
+      {
+        "name": "Investment Schemes",
+        "count": 810,
+        "percentage": 5,
+        "risk": "Critical"
+      }
+    ],
+    "timeline_activity": [
+      {
+        "time": "14:15",
+        "scans": 142,
+        "threats": 89
+      },
+      {
+        "time": "14:30",
+        "scans": 188,
+        "threats": 124
+      },
+      {
+        "time": "14:45",
+        "scans": 210,
+        "threats": 148
+      },
+      {
+        "time": "15:00",
+        "scans": 245,
+        "threats": 162
+      },
+      {
+        "time": "15:15",
+        "scans": 195,
+        "threats": 130
+      },
+      {
+        "time": "15:30",
+        "scans": 260,
+        "threats": 182
+      }
+    ],
+    "recent_threats": [
+      {
+        "id": "TRT-8921",
+        "category": "Digital Arrest",
+        "risk": "Critical",
+        "score": 96,
+        "language": "en",
+        "timestamp": "2 mins ago"
+      },
+      {
+        "id": "TRT-8920",
+        "category": "KYC Account Block",
+        "risk": "High",
+        "score": 85,
+        "language": "te-rom",
+        "timestamp": "5 mins ago"
+      },
+      {
+        "id": "TRT-8919",
+        "category": "UPI Collect Scam",
+        "risk": "High",
+        "score": 78,
+        "language": "en",
+        "timestamp": "9 mins ago"
+      },
+      {
+        "id": "TRT-8918",
+        "category": "Remote APK Download",
+        "risk": "Critical",
+        "score": 92,
+        "language": "en",
+        "timestamp": "14 mins ago"
+      },
+      {
+        "id": "TRT-8917",
+        "category": "Task Job Fraud",
+        "risk": "Medium",
+        "score": 58,
+        "language": "hi-rom",
+        "timestamp": "21 mins ago"
+      }
+    ]
+  },
+  "percentage_sum": 100,
+  "distribution_item_count": 6,
+  "accuracy_benchmark": "Not measured",
+  "is_consistent": true
+}

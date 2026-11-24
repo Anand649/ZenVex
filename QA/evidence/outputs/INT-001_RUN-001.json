@@ -1,0 +1,159 @@
+{
+  "test_id": "INT-001",
+  "all_keys_present": true,
+  "keys_found": [
+    "scan_id",
+    "input_type",
+    "text",
+    "language",
+    "risk",
+    "scam_type",
+    "indicators",
+    "urls",
+    "spans",
+    "explanation",
+    "actions",
+    "helplines",
+    "ml_used"
+  ],
+  "sample_response": {
+    "scan_id": "6cf20e73a2da",
+    "input_type": "text",
+    "text": "Your bank account will be blocked today due to incomplete KYC. Update immediately: http://sbi-kyc-update.xyz",
+    "language": "en",
+    "risk": {
+      "score": 100,
+      "band": "very_high",
+      "label": "Very high risk",
+      "breakdown": {
+        "text": 52,
+        "url": 50,
+        "ml": 0
+      },
+      "disclaimer": "This score summarises detected warning signs. It is not a probability of fraud."
+    },
+    "scam_type": {
+      "id": "kyc_account_block",
+      "label": "KYC or account-block impersonation"
+    },
+    "indicators": [
+      {
+        "id": "urgency",
+        "label": "Creates urgency or a deadline",
+        "weight": 12,
+        "evidence": [
+          "immediately"
+        ]
+      },
+      {
+        "id": "account_threat",
+        "label": "Threatens to block, suspend or close an account or service",
+        "weight": 20,
+        "evidence": [
+          "account will be blocked"
+        ]
+      },
+      {
+        "id": "kyc_pressure",
+        "label": "Pressures you to update or verify KYC, PAN or Aadhaar",
+        "weight": 20,
+        "evidence": [
+          "incomplete KYC"
+        ]
+      }
+    ],
+    "urls": [
+      {
+        "url": "http://sbi-kyc-update.xyz",
+        "host": "sbi-kyc-update.xyz",
+        "registered_domain": "sbi-kyc-update.xyz",
+        "verdict": "suspicious",
+        "score": 70,
+        "flags": [
+          {
+            "id": "brand_mismatch",
+            "label": "Contains a well-known brand name but is not on our official-domain starter list (possible impersonation)",
+            "weight": 35
+          },
+          {
+            "id": "explicit_http",
+            "label": "Uses http:// without encryption",
+            "weight": 8
+          },
+          {
+            "id": "phishing_words",
+            "label": "Domain contains words like verify, update, login or refund",
+            "weight": 12
+          },
+          {
+            "id": "suspicious_tld",
+            "label": "Uses a top-level domain often seen in throwaway scam sites",
+            "weight": 15
+          }
+        ],
+        "official_domain_match": false,
+        "reputation_checked": false,
+        "note": "Structure-only check. The link was not opened and no reputation service was queried, so 'no flags' does not mean the link is safe."
+      }
+    ],
+    "spans": [
+      {
+        "start": 83,
+        "end": 108,
+        "kind": "url",
+        "id": "url"
+      },
+      {
+        "start": 70,
+        "end": 81,
+        "kind": "indicator",
+        "id": "urgency"
+      },
+      {
+        "start": 10,
+        "end": 33,
+        "kind": "indicator",
+        "id": "account_threat"
+      },
+      {
+        "start": 47,
+        "end": 61,
+        "kind": "indicator",
+        "id": "kyc_pressure"
+      }
+    ],
+    "explanation": {
+      "text": "This message resembles: KYC or account-block impersonation. 3 warning signs detected: creates urgency or a deadline; threatens to block, suspend or close an account or service; pressures you to update or verify kyc, pan or aadhaar. The link 'sbi-kyc-update.xyz' has 4 structural warning signs. It was not opened or checked against a reputation service. These are indicators, not proof. Verify through an official channel before acting.",
+      "source": "template"
+    },
+    "actions": [
+      {
+        "en": "Banks do not ask you to complete KYC through a link in a message. Open your bank's official app instead.",
+        "te": null
+      },
+      {
+        "en": "Do not open links or call numbers in this message.",
+        "te": "\u0c08 \u0c38\u0c02\u0c26\u0c47\u0c36\u0c02\u0c32\u0c4b\u0c28\u0c3f \u0c32\u0c3f\u0c02\u0c15\u0c4d\u200c\u0c32\u0c28\u0c41 \u0c24\u0c46\u0c30\u0c35\u0c35\u0c26\u0c4d\u0c26\u0c41, \u0c28\u0c02\u0c2c\u0c30\u0c4d\u0c32\u0c15\u0c41 \u0c15\u0c3e\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c35\u0c26\u0c4d\u0c26\u0c41."
+      },
+      {
+        "en": "Never share an OTP, PIN, password or card details with anyone.",
+        "te": "OTP, PIN, \u0c2a\u0c3e\u0c38\u0c4d\u200c\u0c35\u0c30\u0c4d\u0c21\u0c4d \u0c32\u0c47\u0c26\u0c3e \u0c15\u0c3e\u0c30\u0c4d\u0c21\u0c4d \u0c35\u0c3f\u0c35\u0c30\u0c3e\u0c32\u0c28\u0c41 \u0c0e\u0c35\u0c30\u0c3f\u0c24\u0c4b\u0c28\u0c42 \u0c2a\u0c02\u0c1a\u0c41\u0c15\u0c4b\u0c35\u0c26\u0c4d\u0c26\u0c41."
+      },
+      {
+        "en": "Verify independently using the official app or website, not the link in the message.",
+        "te": "\u0c38\u0c02\u0c26\u0c47\u0c36\u0c02\u0c32\u0c4b\u0c28\u0c3f \u0c32\u0c3f\u0c02\u0c15\u0c4d \u0c15\u0c3e\u0c15\u0c41\u0c02\u0c21\u0c3e, \u0c05\u0c27\u0c3f\u0c15\u0c3e\u0c30\u0c3f\u0c15 \u0c2f\u0c3e\u0c2a\u0c4d \u0c32\u0c47\u0c26\u0c3e \u0c35\u0c46\u0c2c\u0c4d\u200c\u0c38\u0c48\u0c1f\u0c4d \u0c26\u0c4d\u0c35\u0c3e\u0c30\u0c3e \u0c38\u0c4d\u0c35\u0c2f\u0c02\u0c17\u0c3e \u0c38\u0c30\u0c3f\u0c1a\u0c42\u0c38\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f."
+      },
+      {
+        "en": "If you already lost money, call 1930 immediately and report at cybercrime.gov.in.",
+        "te": "\u0c21\u0c2c\u0c4d\u0c2c\u0c41 \u0c2a\u0c4b\u0c2f\u0c3f\u0c28\u0c1f\u0c4d\u0c32\u0c2f\u0c3f\u0c24\u0c47 \u0c35\u0c46\u0c02\u0c1f\u0c28\u0c47 1930 \u0c15\u0c41 \u0c15\u0c3e\u0c32\u0c4d \u0c1a\u0c47\u0c38\u0c3f, cybercrime.gov.in \u0c32\u0c4b \u0c2b\u0c3f\u0c30\u0c4d\u0c2f\u0c3e\u0c26\u0c41 \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f."
+      }
+    ],
+    "helplines": {
+      "cybercrime_helpline": "1930",
+      "cybercrime_portal": "cybercrime.gov.in",
+      "suspected_fraud_reporting": "Chakshu on the Sanchar Saathi portal (sancharsaathi.gov.in)",
+      "note": "Verify these details on official government websites before relying on them."
+    },
+    "ml_used": false
+  }
+}

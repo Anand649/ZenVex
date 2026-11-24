@@ -1,0 +1,92 @@
+{
+  "test_id": "FUNC-003",
+  "defect_id": "BUG-001",
+  "input_text": "Download the SBI Reward app apk from http://sbi-rewards-claim.cfd/app.apk to redeem your reward points today.",
+  "scam_type": {
+    "id": "prize_lottery",
+    "label": "Prize, lottery or cashback scam"
+  },
+  "risk": {
+    "score": 62,
+    "band": "high",
+    "label": "High risk",
+    "breakdown": {
+      "text": 12,
+      "url": 50,
+      "ml": 0
+    },
+    "disclaimer": "This score summarises detected warning signs. It is not a probability of fraud."
+  },
+  "indicators": [
+    {
+      "id": "reward_bait",
+      "label": "Promises a prize, lottery win, cashback or reward",
+      "weight": 12,
+      "evidence": [
+        "reward points"
+      ]
+    }
+  ],
+  "urls": [
+    {
+      "url": "http://sbi-rewards-claim.cfd/app.apk",
+      "host": "sbi-rewards-claim.cfd",
+      "registered_domain": "sbi-rewards-claim.cfd",
+      "verdict": "suspicious",
+      "score": 100,
+      "flags": [
+        {
+          "id": "apk_link",
+          "label": "Link points to an Android APK file",
+          "weight": 30
+        },
+        {
+          "id": "brand_mismatch",
+          "label": "Contains a well-known brand name but is not on our official-domain starter list (possible impersonation)",
+          "weight": 35
+        },
+        {
+          "id": "explicit_http",
+          "label": "Uses http:// without encryption",
+          "weight": 8
+        },
+        {
+          "id": "phishing_words",
+          "label": "Domain contains words like verify, update, login or refund",
+          "weight": 12
+        },
+        {
+          "id": "suspicious_tld",
+          "label": "Uses a top-level domain often seen in throwaway scam sites",
+          "weight": 15
+        }
+      ],
+      "official_domain_match": false,
+      "reputation_checked": false,
+      "note": "Structure-only check. The link was not opened and no reputation service was queried, so 'no flags' does not mean the link is safe."
+    }
+  ],
+  "spans": [
+    {
+      "start": 37,
+      "end": 73,
+      "kind": "url",
+      "id": "url"
+    },
+    {
+      "start": 89,
+      "end": 102,
+      "kind": "indicator",
+      "id": "reward_bait"
+    }
+  ],
+  "explanation": {
+    "text": "This message resembles: Prize, lottery or cashback scam. 1 warning sign detected: promises a prize, lottery win, cashback or reward. The link 'sbi-rewards-claim.cfd' has 5 structural warning signs. It was not opened or checked against a reputation service. These are indicators, not proof. Verify through an official channel before acting.",
+    "source": "template"
+  },
+  "root_cause_analysis": {
+    "url_masking": "URLs are replaced with spaces in engine/rules.py _mask_urls() before regex scanning.",
+    "lexicon_pattern": "Pattern '.apk\\b' matches URL text, which is masked, so remote_access indicator never fires.",
+    "classification_result": "scam_type falls back to prize_lottery due to 'reward points' triggering reward_bait."
+  }
+}
